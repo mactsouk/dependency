@@ -14,11 +14,11 @@ agent:
 blocks:
 
   - name: A
-    # Empty array means "no dependencies" -> start immediately
     dependencies: []
     task:
       jobs:
-        - commands: [echo foo]
+		- name: Job A
+          commands: [echo foo]
 
   - name: B
     dependencies: [A, D]
@@ -33,7 +33,6 @@ blocks:
         - commands: [echo baz]
 
   - name: D
-    # Empty array means "no dependencies" -> start immediately
     dependencies: []
     task:
       jobs:
@@ -50,3 +49,4 @@ blocks:
     task:
       jobs:
         - commands: [echo F]
+		
