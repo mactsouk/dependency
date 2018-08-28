@@ -12,7 +12,6 @@ agent:
     os_image: ubuntu1804
 
 blocks:
-
   - name: A
     dependencies: []
     task:
