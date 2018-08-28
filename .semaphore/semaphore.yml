@@ -1,5 +1,5 @@
-version: "v1.0"
-name: First pipeline example
+version: v1.0
+name: Checking dependencies
 agent:
   machine:
     type: e1-standard-2
@@ -46,18 +46,3 @@ blocks:
           - checkout
           - echo "make security"
 
-  - name: "Integration tests"
-    task:
-      jobs:
-      - name: Cucumber
-        commands:
-          - checkout
-          - echo "make cucumber"
-
-  - name: "Push Image"
-    task:
-      jobs:
-      - name: Push
-        commands:
-          - checkout
-          - echo "make docker.push"
