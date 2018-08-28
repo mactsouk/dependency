@@ -31,7 +31,8 @@ blocks:
              - echo B
  
   - name: C
-    dependencies: [B]
+    dependencies:
+        - B
     task:
       jobs:
         - name: Job C
@@ -47,7 +48,8 @@ blocks:
              - echo D
  
   - name: E
-    dependencies: [B]
+    dependencies:
+        - B
     task:
       jobs:
         - name: Job E
@@ -55,7 +57,8 @@ blocks:
              - echo E
  
   - name: F
-    dependencies: [E]
+    dependencies:
+        - E
     task:
       jobs:
         - name: Job F
