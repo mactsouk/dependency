@@ -18,35 +18,36 @@ blocks:
     task:
       jobs:
 		- name: Job A
-          commands: [echo foo]
+          commands:
+			  - echo foo
 
-  - name: B
-    dependencies: [A, D]
-    task:
-      jobs:
-          - commands: [echo bar]
-
-  - name: C
-    dependencies: [B]
-    task:
-      jobs:
-          - commands: [echo baz]
-
-  - name: D
-    dependencies: []
-    task:
-      jobs:
-          - commands: [echo foo-bar]
-
-  - name: E
-    dependencies: [B]
-    task:
-      jobs:
-          - commands: [echo E]
-
-  - name: F
-    dependencies: [E]
-    task:
-      jobs:
-          - commands: [echo F]
+# - name: B
+#   dependencies: [A, D]
+#   task:
+#     jobs:
+#         - commands: [echo bar]
+#
+# - name: C
+#   dependencies: [B]
+#   task:
+#     jobs:
+#         - commands: [echo baz]
+#
+# - name: D
+#   dependencies: []
+#   task:
+#     jobs:
+#         - commands: [echo foo-bar]
+#
+# - name: E
+#   dependencies: [B]
+#   task:
+#     jobs:
+#         - commands: [echo E]
+#
+# - name: F
+#   dependencies: [E]
+#   task:
+#     jobs:
+#         - commands: [echo F]
 		
