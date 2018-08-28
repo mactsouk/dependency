@@ -13,12 +13,12 @@ agent:
 
 blocks:
   - name: A
-    # Empty array means "no dependencies" -> start immediately
     dependencies: []
     task:
       jobs:
         - name: Job A
            commands:
+             - checkout
              - echo A
 
   - name: B
