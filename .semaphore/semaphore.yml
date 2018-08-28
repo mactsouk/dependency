@@ -16,9 +16,9 @@ blocks:
     dependencies: []
     task:
       jobs:
-		- name: Job A
+        - name: Job A
           commands:
-			  - echo foo
+             - echo foo
 
 # - name: B
 #   dependencies: [A, D]
@@ -49,4 +49,4 @@ blocks:
 #   task:
 #     jobs:
 #         - commands: [echo F]
-		
+        
