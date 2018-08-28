@@ -12,52 +12,41 @@ agent:
     os_image: ubuntu1804
 
 blocks:
+
   - name: A
+    # Empty array means "no dependencies" -> start immediately
     dependencies: []
     task:
       jobs:
-        - name: Job A
-           commands:
-             - checkout
-             - echo A
+        - commands: [echo foo]
 
   - name: B
     dependencies: [A, D]
     task:
       jobs:
-        - name: Job B
-           commands:
-             - echo foo
+        - commands: [echo bar]
 
   - name: C
     dependencies: [B]
     task:
       jobs:
-        - name: Job C
-           commands:
-             - echo foo
+        - commands: [echo baz]
 
   - name: D
+    # Empty array means "no dependencies" -> start immediately
     dependencies: []
     task:
       jobs:
-        - name: Job D
-           commands:
-             - echo foo
+        - commands: [echo foo-bar]
 
   - name: E
     dependencies: [B]
     task:
       jobs:
-        - name: Job E
-           commands:
-             - echo foo
+        - commands: [echo E]
 
   - name: F
     dependencies: [E]
     task:
       jobs:
-        - name: Job F
-           commands:
-             - echo foo
-
+        - commands: [echo F]
