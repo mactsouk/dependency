@@ -24,29 +24,29 @@ blocks:
     dependencies: [A, D]
     task:
       jobs:
-        - commands: [echo bar]
+          - commands: [echo bar]
 
   - name: C
     dependencies: [B]
     task:
       jobs:
-        - commands: [echo baz]
+          - commands: [echo baz]
 
   - name: D
     dependencies: []
     task:
       jobs:
-        - commands: [echo foo-bar]
+          - commands: [echo foo-bar]
 
   - name: E
     dependencies: [B]
     task:
       jobs:
-        - commands: [echo E]
+          - commands: [echo E]
 
   - name: F
     dependencies: [E]
     task:
       jobs:
-        - commands: [echo F]
+          - commands: [echo F]
 		
