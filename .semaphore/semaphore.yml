@@ -22,8 +22,8 @@ blocks:
 
   - name: B
     dependencies:
-		- A
-		- D
+        - A
+        - D
     task:
       jobs:
         - name: Job B
