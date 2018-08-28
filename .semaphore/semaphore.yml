@@ -9,7 +9,7 @@ name: Free topology - complex topology
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu1604
+    os_image: ubuntu1804
 
 blocks:
   - name: A
@@ -17,7 +17,7 @@ blocks:
     dependencies: []
     task:
       jobs:
-        - name: List of changes
+        - name: Job A
            commands:
              - echo A
 
@@ -25,7 +25,7 @@ blocks:
     dependencies: [A, D]
     task:
       jobs:
-        - name: List of changes
+        - name: Job B
            commands:
              - echo foo
 
@@ -33,16 +33,15 @@ blocks:
     dependencies: [B]
     task:
       jobs:
-        - name: List of changes
+        - name: Job C
            commands:
              - echo foo
 
   - name: D
-    # Empty array means "no dependencies" -> start immediately
     dependencies: []
     task:
       jobs:
-        - name: List of changes
+        - name: Job D
            commands:
              - echo foo
 
@@ -50,7 +49,7 @@ blocks:
     dependencies: [B]
     task:
       jobs:
-        - name: List of changes
+        - name: Job E
            commands:
              - echo foo
 
@@ -58,7 +57,7 @@ blocks:
     dependencies: [E]
     task:
       jobs:
-        - name: List of changes
+        - name: Job F
            commands:
              - echo foo
 
