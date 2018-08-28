@@ -21,7 +21,9 @@ blocks:
              - echo foo
 
   - name: B
-    dependencies: [A, D]
+    dependencies:
+		- A
+		- D
     task:
       jobs:
         - name: Job B
