@@ -17,36 +17,48 @@ blocks:
     dependencies: []
     task:
       jobs:
-        - commands: [echo foo]
+        - name: List of changes
+           commands:
+             - echo A
 
   - name: B
     dependencies: [A, D]
     task:
       jobs:
-        - commands: [echo bar]
+        - name: List of changes
+           commands:
+             - echo foo
 
   - name: C
     dependencies: [B]
     task:
       jobs:
-        - commands: [echo baz]
+        - name: List of changes
+           commands:
+             - echo foo
 
   - name: D
     # Empty array means "no dependencies" -> start immediately
     dependencies: []
     task:
       jobs:
-        - commands: [echo foo-bar]
+        - name: List of changes
+           commands:
+             - echo foo
 
   - name: E
     dependencies: [B]
     task:
       jobs:
-        - commands: [echo E]
+        - name: List of changes
+           commands:
+             - echo foo
 
   - name: F
     dependencies: [E]
     task:
       jobs:
-        - commands: [echo F]
+        - name: List of changes
+           commands:
+             - echo foo
 
