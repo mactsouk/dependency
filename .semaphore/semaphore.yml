@@ -19,6 +19,9 @@ blocks:
         - name: Job A
           commands:
              - echo foo
+        - name: Job B
+          commands:
+             - echo Job B - Block A
 
   - name: B
     dependencies:
